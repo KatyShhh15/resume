@@ -7,15 +7,65 @@
 
   <head>
     <title>
-      Page name
+      {{page.title}}
     </title>
     <meta charset='utf-8' />
     <link href='css/index.css' rel='stylesheet' />
   </head>
 
   <body>
+    {{#with header}}
+    <header>
+      <div>
+          <h1>{{name.firstname}} {{name.lastname}}</h1>
+      </div>
+      <div>
+          <b>{{position}}</b>
+      </div>
+      <br>
+      <div>
+          <em>
+              <p>{{salary}}</p>
+          </em>
+      </div>
+      <div>
+          <em>
+            <address>
+              <p>{{address}}</p>
+            </address>
+          </em>
+      </div>
+      <br>
+      <hr>
+    </header>
+    {{/with}}
+
+{{> nav}}
+
     {{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   --}}
-    {{{body}}}
-  </body>
+  {{{body}}}
+  
+  {{#with footer}}
+    <footer>
+      <hr>
+      <br>
+      <div>
+          {{#with social}}
+            {{> link text=email.text href=email.href blank=true }}
+            {{> link text=phone.text href=phone.href blank=true }}
+            {{> link text=linkedin.text href=linkedin.href blank=true }}
+          {{/with}}
+      </div>
+      <br>
+      <div>
+        <em>Copyright by {{../header.name.firstname}} {{../header.name.lastname}}</em>
+      </div>
+      <br>
+      <div>
+        <em> {{../header.address}}</em>
+      </div>
+    </footer>
+  {{/with}}
+</body>
 
 </html>
