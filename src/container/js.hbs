@@ -1,0 +1,35 @@
+<div>
+    <main>
+        <section>
+        <br>
+        <h1><span class="badge bg-secondary">{{name}}</span></h1>
+        <hr>
+            <div><p>{{description}}</p></div>
+                {{#with history}}
+                    <div>Founder: {{founder}} in {{year}}</div>
+                {{/with}}
+        </section>
+
+        <section>
+            <ul>
+                Types: {{types}}
+            </ul>
+                <button type="button" class="btn btn-danger">Features</button>
+                <button type="button" class="btn btn-warning">Libraries</button>
+                <button type="button" class="btn btn-success">Tools</button>
+        </section>
+        
+        <section>
+            {{#each community}}
+                <div>
+                    <b>
+                        {{name}}
+                    </b>
+                    <p>
+                        {{type}}
+                    </p>
+                </div>
+            {{/each}}
+        </section>
+    </main>
+</div>
