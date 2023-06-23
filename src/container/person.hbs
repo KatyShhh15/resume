@@ -1,0 +1,30 @@
+<div>
+    {{#with person}}
+        <div>
+            <h1>{{name}}, {{age}}</h1>
+        </div>
+    {{/with}}
+    <br>
+    <br>
+    <ul>
+        {{#with person.address}}
+        <div>
+            <li><p>{{country}}, {{state}}, {{street}}</p></li>
+        </div>
+    {{/with}}
+    </ul>
+    <ul>
+        {{#each person.education}}
+        <div>
+            <li><p>{{university}}, {{degree}}, {{major}} in {{graduationYear}}</p></li>
+        </div>
+    {{/each}}
+    </ul>
+    <ul>
+        {{#each person.workExperience}}
+        <div>
+            <li><p>{{company}} by {{title}} from {{startDate}} to {{endDate}}</p></li>
+        </div>
+    {{/each}}
+    </ul>
+</div>
