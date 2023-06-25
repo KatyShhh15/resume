@@ -1,0 +1,56 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <main>
+        <section>
+                {{> title data="Car park" big=true}}
+                <br>
+            <div>
+                <button type="button" class="btn btn-link"><h2>1. <u>{{make}} {{model}}</u> ({{year}})</h2></button>
+                <br>
+                    {{#with features}}
+                        {{#with interior}}
+
+                            {{#with seats}}
+                                <li><h3>Seats:</h3></li>
+                            <ul>
+                                <div>Material: {{material}}</div>
+                            <br>
+                                <div>Color: {{color}}</div>
+                            <br> 
+                            </ul>
+                            {{/with}} 
+
+                            {{#with dashboard}}
+                                <li><h3>Dashboard:</h3></li>
+                            <ul>
+                                <div>Material: {{material}}</div>
+                            <br>
+                                <div>Color: {{color}}</div>
+                            <br> 
+                            </ul>
+                            {{#with display}}
+                                <li><h3>Display:</h3></li>
+                            <ul>
+                                <div>Type: {{type}}</div>
+                            <br>
+                                <div>Size: {{size}}</div>
+                            <br> 
+                            </ul>
+                            {{/with}}
+                            {{/with}}
+
+                        {{/with}}
+                    {{/with}}
+            </div>
+        </section>
+    </main>
+</div>
+
+    {{!-- 
+        Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+        Адже наш layout/default.hbs має вже структуру HTML
+    --}}
