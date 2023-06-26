@@ -1,0 +1,32 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <main>
+        <section>
+                {{> title data="Apple MacBook Pro" big=true}}
+            <div>
+                <p><i>{{category}}</i></p>
+            <p>{{description}}</p>
+            <P><b>Price:</b> {{price}}</P>
+            </div>
+        </section>
+        <hr>
+        {{#with features}}
+            <section>
+                {{#with processor}}
+                    <p>Brand & model: <button type="button" class="btn">{{brand}}, {{model}}</button></p>
+                    <br>
+                        <p>{{type}}</p>
+                {{/with}}
+            </section>
+        {{/with}}
+    </main>
+</div>
+
+    {{!-- 
+        Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+        Адже наш layout/default.hbs має вже структуру HTML
+    --}}
