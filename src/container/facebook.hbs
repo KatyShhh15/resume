@@ -1,0 +1,34 @@
+<div>
+    <main>
+        <section>
+            {{> title data="Facebook" big=true}}
+            <br>
+            <ul>
+                {{#each users}}
+                    <p>{{name}}, <i>{{gender}}</i></p>
+                    <p>id: {{id}}</p> 
+                    <p>Age: {{age}}</p>
+                    <h2>Friends:</h2>
+                    {{#each friends}}
+                    <p>{{name}}, <i>{{gender}}</i></p>
+                    <p>id: {{id}}</p> 
+                    <p>Age: {{age}}</p>
+                    {{/each}}
+            </ul>
+        </section>
+
+                <section>
+            {{> title data="Groups"}}
+            <ul>
+                {{#each groups}}
+                <li>
+                    {{name}} ({{id}})
+                    <p><i>{{description}}</i></p>
+                    <button type="button" class="btn btn-info">Забронювати</button>
+                </li>
+                {{/each}}
+                {{/each}}
+            </ul>
+        </section>
+    </main>
+</div>
