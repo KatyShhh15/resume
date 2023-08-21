@@ -1,0 +1,79 @@
+<main>
+<div>
+    <div class="row g-2">
+        <div class="col-12">
+            <div class="nav">
+                <div class="nav-item">
+                </div>
+                    {{#with navigation}}
+                        {{#each links}}
+                            <a href="{{href}}" class="nav-link">{{text}}</a>
+                        {{/each}}
+                    {{/with}}
+                        <a href="{{href}}" class="nav-link disabled">Link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+<section class="col-12">
+    <h1 class="text-center">{{newsBlock.title}}</h1>
+    <div class="row g-3">
+        {{#each newsBlock.cards}}
+        <div class="col-3">
+            <div class="card text-bg-dark">
+                <div class="card-header text-center d-flex gap-2">
+                    {{title}} 
+                    <div class="d-flex align-items-center gap-2">
+                        <div>
+                            {{#if isTop}} 
+                                <span class="badge text-bg-danger rounded-pill">Top</span>                             
+                            {{/if}}
+                        </div>
+                        <div>
+                            {{#if isNew}} <span class="badge text-bg-success rounded-pill">New</span>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body text-center">
+                    <p>{{description}}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <div>
+        <div class="row g-4">
+            <div class="col-12">
+                <div class="nav nav-tabs">
+                    {{#with goodsBlock}}
+                    {{#each tabs}}
+                        <div class="nav-item">
+                            <a href="#" class="nav-link {{#if isActive}}active{{/if}} {{#if isDisabled}}disabled{{/if}}">{{text}}</a>
+                        </div>
+                    {{/each}}
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        {{#with goodsBlock}}
+        {{#each cards}}
+        <div class="card text-bg-light">
+            <img class="card-img-top" src="{{image}}" alt="Product photo">
+            <div class="card-body">
+                <h5 class="card-title text-primary">{{title}}</h5>
+                <p class="text-primary">{{description}}</p>
+                <a href="/summary" class="btn btn-primary">Open</a>
+            </div>
+        </div>
+    </div>
+        {{/each}}
+        {{/with}}
+    </div>
+</section>
+</main>
