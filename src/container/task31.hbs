@@ -88,23 +88,23 @@
 
 <section>
 <div class="row">
-    {{#with relaxion}}
-    <h2 class="text-center">{{title}}</h2>
-    {{#each cards}}
-     <div class="col-3">
-        <div class="card text-bg-dark">
-    <div class="card-header text-left">{{header}}</div>
-    <div class="card-top">
-    <ul class="list-group">
-        <li class="list-group-item">{{title}}</li>
-        <li class="list-group-item">{{description}}</li>
-    </ul>
-    </div>
-    </div>
-    </div>
-    {{/each}}
-    {{/with}}
-    </div>
+        {{#with relaxion}}
+        <h2 class="text-center">{{title}}</h2>
+        {{#each cards}}
+                        <div class="col-3">
+                            <div class="card text-bg-dark">
+                        <div class="card-header text-left">{{header}}</div>
+                        <div class="card-top">
+                        <ul class="list-group">
+                            <li class="list-group-item">{{title}}</li>
+                            <li class="list-group-item">{{description}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+        {{/with}}
+        </div>
     </div>
 </section>
 
