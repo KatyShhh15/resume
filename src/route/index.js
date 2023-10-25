@@ -10,9 +10,9 @@ var header = {
     firstname: 'Ivan',
     lastname: 'Ivanov',
   },
-    position: 'Junior Fullstack JS Developer',
-    salary: '600$ в місяць',
-    address: 'Ukraine, Kharkiv',
+  position: 'Junior Fullstack JS Developer',
+  salary: '600$ в місяць',
+  address: 'Ukraine, Kharkiv',
 }
 
 var footer = {
@@ -29,7 +29,7 @@ var footer = {
       text: 'LinkedIn',
       href: 'https://www.linkedin.com/in/dmytro-test',
     },
-  }
+  },
 }
 
 // ================================================================
@@ -51,11 +51,10 @@ router.get('/', function (req, res) {
 router.get('/summary', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('summary', {
-   
     page: {
       title: 'Resume | Summary',
     },
-    
+
     header,
 
     main: {
@@ -83,54 +82,53 @@ router.get('/summary', function (req, res) {
 router.get('/skills', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('skills', {
-   
     page: {
       title: 'Resume | Skills',
     },
-    
+
     header,
 
     main: {
       skills: [
         {
-          name:'HTML & NPM', 
+          name: 'HTML & NPM',
           point: 10,
           isTop: true,
         },
         {
-          name:'Handlebars & Terminal',
+          name: 'Handlebars & Terminal',
           point: 10,
           isTop: true,
         },
         {
-          name:'VS Code',
+          name: 'VS Code',
           point: 9,
         },
         {
-          name:'Git',
+          name: 'Git',
           point: 3,
           isTop: false,
         },
         {
-          name:'React.js',
+          name: 'React.js',
           point: 0,
         },
         {
-          name:'PHP',
+          name: 'PHP',
           point: null,
         },
       ],
       hobbies: [
         {
-          name:'Спортивно-бальні танці',
+          name: 'Спортивно-бальні танці',
           isMain: true,
         },
         {
-          name:'Акторське майстерство',
+          name: 'Акторське майстерство',
           isMain: false,
         },
         {
-          name:'Катання на велосипеді',
+          name: 'Катання на велосипеді',
           isMain: true,
         },
       ],
@@ -144,11 +142,11 @@ router.get('/skills', function (req, res) {
 
 router.get('/education', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
-   res.render('education', {
+  res.render('education', {
     page: {
       title: 'Resume | Education',
     },
-    
+
     header,
 
     main: {
@@ -184,20 +182,19 @@ router.get('/education', function (req, res) {
 
     footer,
   })
-  })
+})
 
-  // ================================================================
+// ================================================================
 
 router.get('/work', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
-   res.render('work', {
-
+  res.render('work', {
     layout: 'big',
 
     page: {
       title: 'Resume | Work',
     },
-    
+
     header,
 
     main: {
@@ -214,47 +211,49 @@ router.get('/work', function (req, res) {
           },
           progectAmount: 3,
 
-          projects:[{
-            name: 'Resume',
-            url: 'http://resume.com.ua/',
-            about: 'Airbnb competitor. Hight-load application for searching apartments.',
-            stacks: [
-              {
-                name: 'React.js',
-              },
-              {
-                name: 'HTML / CSS',
-              },
-              {
-                name: 'Nodejs',
-              },
-            ],
-            awards: [
-              {
-                name: 'Сертифікат Кенгуру',
-              },
-              {
-                name: 'Сертифікат Соняшник',
-              },
-            ],
-          },
-        ],
+          projects: [
+            {
+              name: 'Resume',
+              url: 'http://resume.com.ua/',
+              about:
+                'Airbnb competitor. Hight-load application for searching apartments.',
+              stacks: [
+                {
+                  name: 'React.js',
+                },
+                {
+                  name: 'HTML / CSS',
+                },
+                {
+                  name: 'Nodejs',
+                },
+              ],
+              awards: [
+                {
+                  name: 'Сертифікат Кенгуру',
+                },
+                {
+                  name: 'Сертифікат Соняшник',
+                },
+              ],
+            },
+          ],
         },
       ],
     },
 
     footer,
   })
+})
+
+router.get('/bootstrap', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('bootstrap', {
+    layout: 'bootstrap',
   })
+})
 
-  router.get('/bootstrap', function (req, res) {
-    //             ↙ cюди вводимо назву файлу з сontainer
-     res.render('bootstrap', {
-      layout: 'bootstrap',
-     })
-     })
-
-     // ================================================================
+// ================================================================
 
 // router.get Створює нам один ентпоїнт
 
@@ -264,7 +263,7 @@ router.get('/shophome', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shophome', {
-    layout: 'shophome',
+    layout: 'shop',
     navigation: {
       links: [
         {
