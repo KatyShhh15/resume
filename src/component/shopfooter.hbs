@@ -1,0 +1,10 @@
+<div class='nav'>
+  {{#each footer}}
+    <div class='nav-item'>
+  {{#each this}}
+    <a href='{{link}}' class='nav-link {{#if @last}}disabled{{/if}}'>{{text}}</a>
+  {{/each}}
+    </div>
+  {{/each}}
+</div>
+
