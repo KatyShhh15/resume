@@ -1,18 +1,17 @@
 <div>
-    <div class="row g-2">
-        <div class="col-12">
-            <div class="nav">
-                <div class="nav-item">
-                </div>
-                    {{#with navigation}}
-                        {{#each links}}
-                            <a href="{{href}}" class="nav-link">{{text}}</a>
-                        {{/each}}
-                    {{/with}}
-                        <a href="{{href}}" class="nav-link disabled">Link</a>
-                    </div>
-                </div>
+    <div class="card">
+<div class="casd-body">
+    <div class="nav">
+        <div class="nav-item">
+        </div>
+            {{#with navigation}}
+                {{#each links}}
+                    <a href="{{href}}" class="nav-link {{#if @last}}disabled{{/if}}">{{text}}</a>
+                {{/each}}
+            {{/with}}
             </div>
         </div>
+    </div>
+    </div>
     </div>
 </div>

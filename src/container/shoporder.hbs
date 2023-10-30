@@ -1,0 +1,43 @@
+<div>
+    <section>
+        {{> shopheader}}
+    </section>
+    <div>
+        <h1 class="text">{{header}}</h1>
+    </div>
+    <br>
+    <br>
+    <section>
+        <div>
+            {{#with contacts_data}}
+            <h3 class="text">{{title}}</h3>
+            <br>
+            {{#each buttons}}
+            <button class="btn {{#if isPrimary}}btn-warning{{/if}} {{#if isOutline}}btn-outline-warning{{/if}}">
+                <span class="text">{{text}}</span>
+            </button>
+            {{/each}}
+            {{/with}}
+        </div>
+<main class="p-5">
+    {{#with form}}
+    <div>
+        {{#with input}}
+            <div class="row">
+                <div class="col-4">
+                    {{#with surname}}
+                        <label class="form-label">{{label}}</label>
+                        <input class="form-control">
+                        <div class="form-text">{{placeholder}}</div>
+                    {{/with}}
+                </div>
+            </div>
+        {{/with}}
+    </div>
+    {{/with}}
+</main>
+</section>
+    <div>
+        {{> shopfooter}}
+    </div>
+</div>
