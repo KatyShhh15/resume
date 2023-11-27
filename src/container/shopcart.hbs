@@ -1,0 +1,75 @@
+<div>
+    <section>
+        {{> shopheader}}
+    </section>
+
+<hr>
+    <section>
+        {{> cartGoodsItem}}
+    </section>
+<hr>
+    <section>
+        <div class="row g-5">
+            <div class="col-3">
+                {{#with total}}
+                    <h3 class="form-label">{{title}}</h3>
+                    <h4 class="form-label">{{amount}}</h4>
+                    <div class="form-label">{{delivery}}</div>
+                    {{#each buttons}}
+                        <a href="{{link}}" class="btn {{#if isSuccess}}btn-success{{/if}} {{#if isOutline}}btn-outline-success{{/if}} {{#if isInfo}}btn-info{{/if}}">
+                            {{text}}
+                        </a>
+                    {{/each}}
+                {{/with}}
+            </div>
+        </div>    
+    </section>
+<hr>
+    <section>
+        {{#with goodsOtherBlock}}
+        <div class='row g-5'>
+            <h2 class="text-center">{{title}}</h2>
+            {{#each cards}}
+                {{#with this}}
+                    <div class='col-4'>
+                        <div class="card">
+                            <img class="card-img-top" src="{{image}}" alt="Product photo">
+                            <div class="card-body">
+                                <h5 class="card-title">{{title}}
+                                    <span class="badge rounded-pill {{#if isHot}}text-bg-warning{{/if}} {{#if isNew}}text-primary{{/if}}">Hot!</span>
+                                </h5>
+                                <p>{{description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {{/with}}
+            {{/each}}
+            </div>
+        {{/with}}
+    </section>
+<hr>
+    <section>
+        {{#with subscribe}}
+            <div class="row">
+                <div class="card text-bg-dark">
+                    <div class="card-body">
+                        <h5 class="text">{{header}}<h5>
+                        <p>{{description}}</p>
+                        {{#each buttons}}
+                            <div class="col-3">
+                                {{#with this}}
+                                    <a href="{{link}}" class="btn btn-primary">
+                                        {{text}}
+                                    </a>
+                                {{/with}}
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        {{/with}}
+    </section>
+    <section>
+        {{> shopfooter}}
+    </section>
+</div>
